@@ -33,15 +33,19 @@ Your code will only be tested on valid files in the format shown in the 4 exampl
 import csv 
 filename = input("Please enter the name for your file")
 dataList = []
+i = 0
+
 
 with open(filename,"r") as file:
      reader = csv.reader(file)
      for row in reader:
           dataList.append(row)
 
+outfile = filename + "_out.csv"
+
+
 for lists in dataList[1:]:
      student_id = lists[0]
-     print(f"Student ID = {student_id}")
      marks = 0
      subjectCount = 0
      del lists[0]
@@ -60,4 +64,7 @@ for lists in dataList[1:]:
           grade = "3" 
      else:
           grade = "F"
-     print(grade)
+     outputList = [student_id,marks,grade]
+     with open(outfile,"w") as outputFile:
+          writer = csv.writer(outputFile)
+          writer.writerow(outputList)
