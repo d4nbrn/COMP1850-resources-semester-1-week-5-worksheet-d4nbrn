@@ -64,7 +64,8 @@ for lists in dataList[1:]:
           grade = "3" 
      else:
           grade = "F"
-     outputList = [student_id,marks.:2f,grade]
+     round(marks,2)
+     outputList = [student_id,marks,grade]
      with open(outfile,"w") as outputFile:
           writer = csv.writer(outputFile)
           writer.writerow(outputList)
