@@ -34,7 +34,30 @@ import csv
 filename = input("Please enter the name for your file")
 dataList = []
 
-with open(filename,r,newline='') as file:
+with open(filename,"r") as file:
      reader = csv.reader(file)
      for row in reader:
           dataList.append(row)
+
+for lists in dataList[1:]:
+     student_id = lists[0]
+     #print(f"Student ID = {student_id}")
+     marks = 0
+     subjectCount = 0
+     del lists[0]
+     for i in range(len(lists)):
+          if lists[i] != "":
+               marks = marks + int(lists[i])
+               subjectCount += 1
+     grade = marks/subjectCount
+     if marks >= 70:
+          grade = "1"
+     elif marks >= 60:
+          grade = "2:1"
+     elif marks >= 50:
+          grade = "2:2"
+     elif marks >= 40:
+          grade = "3" 
+     else:
+          grade = "F"
+     #print(grade)
