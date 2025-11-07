@@ -30,3 +30,11 @@ Note:
 Your code will only be tested on valid files in the format shown in the 4 example files in this folder - you do not need to validate any data.
 '''
 
+import csv 
+filename = input("Please enter the name for your file")
+dataList = []
+
+with open(filename,r,newline='') as file:
+     reader = csv.reader(file)
+     for row in reader:
+          dataList.append(row)
