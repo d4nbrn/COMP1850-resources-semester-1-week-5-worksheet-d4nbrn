@@ -41,7 +41,7 @@ with open(filename,"r") as file:
 
 for lists in dataList[1:]:
      student_id = lists[0]
-     #print(f"Student ID = {student_id}")
+     print(f"Student ID = {student_id}")
      marks = 0
      subjectCount = 0
      del lists[0]
@@ -49,7 +49,7 @@ for lists in dataList[1:]:
           if lists[i] != "":
                marks = marks + int(lists[i])
                subjectCount += 1
-     grade = marks/subjectCount
+     marks = marks/subjectCount
      if marks >= 70:
           grade = "1"
      elif marks >= 60:
@@ -60,4 +60,4 @@ for lists in dataList[1:]:
           grade = "3" 
      else:
           grade = "F"
-     #print(grade)
+     print(grade)
